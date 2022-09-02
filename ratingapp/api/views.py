@@ -25,21 +25,8 @@ class StreamingPlatformDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = StreamignPlatformSerializer
     
     
-class RatingCreate(generics.CreateAPIView):
-    serializer_class = RatingSerializer  
-    
-    def perform_create(self, serializer):
-            pk = self.kwargs['pk']
-            ratingfield = Video.objects.get(pk=pk)
-            serializer.save(assocvideo=ratingfield)
-            
-            
-class RatingList(generics.ListAPIView):
-    serializer_class = RatingSerializer
-    
-    def get_queryset(self):
-        pk = self.kwargs['pk']
-        return Rating.objects.filter(assocvideo=pk)
+
+
 
 
 class RatingDetail(generics.RetrieveUpdateDestroyAPIView):
