@@ -4,6 +4,7 @@ from ratingapp.models import Video, StreamingPlatform, Rating
 
 
 class RatingSerializer(serializers.ModelSerializer):
+    author = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = Rating
         exclude = ['assocvideo']     

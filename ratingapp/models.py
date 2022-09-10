@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 
 class Video(models.Model):
@@ -9,6 +11,8 @@ class Video(models.Model):
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
     streamingplatform = models.ForeignKey('StreamingPlatform', on_delete=models.CASCADE, related_name='watchlist')
+    avgrating = models.FloatField(default=0)
+    totalrating = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -21,8 +25,9 @@ class StreamingPlatform(models.Model):
         return self.name
     
 class Rating(models.Model):
+    rating_num = models.IntegerField(default=5, validators=[MaxValueValidator(5), MinValueValidator(1)])
     feedback = models.CharField(max_length=1024)
-    author = models.CharField(max_length=255)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
     assocvideo = models.ForeignKey('Video', on_delete=models.CASCADE, related_name='ratingfield')
