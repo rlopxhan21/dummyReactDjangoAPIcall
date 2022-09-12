@@ -1,0 +1,23 @@
+[33mcommit 8002007f2c3734d9cc72415feede9898d49eb755[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin-main/main[m[33m)[m
+Author: rlopxhan21 <110797314+rlopxhan21@users.noreply.github.com>
+Date:   Sun Sep 11 05:23:12 2022 +1000
+
+    Create .gitignore
+
+[33mcommit 72a18351b65c00d5d837ba8cd1f6dc4991c76540[m
+Author: R Lopxhan <rlopxhan21@gmail.com>
+Date:   Sun Sep 11 05:31:42 2022 +1000
+
+    Add Permission & Rating Avg
+
+[33mcommit cd11f810e324d6ef4340c2d6d32b8b2e48ef388e[m
+Author: R Lopxhan <rlopxhan21@gmail.com>
+Date:   Sat Sep 3 03:02:42 2022 +1000
+
+    Need little bit of editing
+
+[33mcommit 87105d174bd05df959921a4c83c25a3cd5e567b3[m
+Author: R Lopxhan <rlopxhan21@gmail.com>
+Date:   Sat Sep 3 02:56:43 2022 +1000
+
+    Create class based viwes\
