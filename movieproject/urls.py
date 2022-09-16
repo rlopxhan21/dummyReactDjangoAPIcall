@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ratingapp.api.urls')),
     path('api-auth', include('rest_framework.urls')),
+    path('account/', include("user_app.api.urls")),
 ]

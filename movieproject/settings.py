@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'ratingapp', 
     'rest_framework.authtoken',
+    'user_app'
     # 'django.contrib.auth.models'
 ]
 
