@@ -2,10 +2,29 @@
 from rest_framework import generics
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.throttling import UserRateThrottle, AnonRateThrottle, ScopedRateThrottle
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
 
 from ratingapp.models import Video, StreamingPlatform, Rating
 from .serializers import VideoSerializer, StreamignPlatformSerializer, RatingSerializer
 from ratingapp.api.permissions import AdminOrReadOnly, ReviewUserOrReadOnly
+from .throttling import ReviewCreateThrottle, ReviewListThrottle
+
+
+class UserRatingList(generics.ListAPIView):
+    serializer_class = RatingSerializer
+    # permission_classes = [IsAuthenticated]
+    # throttle_classes = [ReviewListThrottle]
+    
+    # def get_queryset(self):
+    #     username = self.kwargs['username']
+    #     return Rating.objects.filter(author__username=username)
+    
+    def get_queryset(self):
+        username = self.request.query_params.get('username')
+        return Rating.objects.filter(author__username=username)
+
 
 class VideoList(generics.ListCreateAPIView):
     queryset = Video.objects.all()
@@ -33,6 +52,7 @@ class StreamingPlatformDetail(generics.RetrieveUpdateDestroyAPIView):
 class RatingCreate(generics.CreateAPIView):
     serializer_class = RatingSerializer
     permission_classes = [IsAuthenticated]
+    throttle_classes = [ReviewCreateThrottle]
 
     
     def get_queryset(self):
@@ -60,6 +80,9 @@ class RatingCreate(generics.CreateAPIView):
 class RatingList(generics.ListAPIView):
     serializer_class = RatingSerializer
     permission_classes = [IsAuthenticated]
+    throttle_classes = [ReviewListThrottle]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['author__username', 'assocvideo__name']
     
     def get_queryset(self):
         pk = self.kwargs['pk']
@@ -71,3 +94,7 @@ class RatingDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
     permission_classes = [ReviewUserOrReadOnly]
+    throttle_classes = [ScopedRateThrottle]
+    throttle_scope = 'review-detail'
+    
+
