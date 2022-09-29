@@ -10,6 +10,7 @@ from ratingapp.models import Video, StreamingPlatform, Rating
 from .serializers import VideoSerializer, StreamignPlatformSerializer, RatingSerializer
 from ratingapp.api.permissions import AdminOrReadOnly, ReviewUserOrReadOnly
 from .throttling import ReviewCreateThrottle, ReviewListThrottle
+from .pagination import VideoListPagination, VideoListLOPagination, VideoListCPagination
 
 
 class UserRatingList(generics.ListAPIView):
@@ -30,6 +31,9 @@ class VideoList(generics.ListCreateAPIView):
     queryset = Video.objects.all()
     serializer_class = VideoSerializer
     permission_classes = [AdminOrReadOnly]
+    # filter_backends = [filters.SearchFilter]
+    # search_fields = ['=name', 'desc']
+    pagination_class = VideoListCPagination
     
 class VideoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Video.objects.all()

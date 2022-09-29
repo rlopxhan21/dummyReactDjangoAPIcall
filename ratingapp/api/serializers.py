@@ -11,7 +11,8 @@ class RatingSerializer(serializers.ModelSerializer):
 
 
 class VideoSerializer(serializers.ModelSerializer):
-    ratingfield = RatingSerializer(many=True, read_only=True)
+    # ratingfield = RatingSerializer(many=True, read_only=True)
+    platform = serializers.CharField(source='streamingplatform.name')
     class Meta:
         model = Video
         fields = '__all__'
