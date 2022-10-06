@@ -30,7 +30,7 @@ class RegistrationView(generics.CreateAPIView):
         else:
             return serializer.errors
             
-        return Response(token)
+        return Response(token, status=status.HTTP_201_CREATED)
 
 class LogoutView(APIView):
     
