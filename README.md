@@ -27,7 +27,7 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
 ## Available API EndPoints:
 - For ```User```:
   
-  -```POST``` /account/login
+   -```POST``` /account/login
   
   -```POST``` /account/register
   
