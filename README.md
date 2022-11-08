@@ -35,6 +35,7 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
  
  
  - For ```rating```:
+  
   -```GET``` /video
  
   -```POST``` /video
