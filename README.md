@@ -29,9 +29,9 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
   
    -```POST``` /account/login
   
-  -```POST``` /account/register
+   -```POST``` /account/register
   
-  -```POST``` /account/logout
+   -```POST``` /account/logout
  
  
  - For ```rating```:
