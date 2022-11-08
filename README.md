@@ -38,7 +38,7 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
  
   -```GET``` /video
  
- -```POST``` /video
+  -```POST``` /video
   
  -```GET``` /video/<int:pk>
  
@@ -75,5 +75,3 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
  -```DELETE``` /video/rating/<int:pk>
   
  -```GET``` /video/rating/<str:username>
-  
-  
