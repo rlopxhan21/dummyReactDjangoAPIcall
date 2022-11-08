@@ -24,7 +24,7 @@ python manage.py runserver
 
 If there is any error in the code, send me a email at rlopxhan21@gmail.com
 
-## End Points Available:
+## Available API EndPoints:
 - For ```User```:
   
   -```POST``` /account/login
@@ -48,22 +48,32 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
  
  -```DELETE``` /video/<int:pk>
   
-  -```GET``` /sp
-  -```POST``` /sp
+ -```GET``` /sp
+ 
+ -```POST``` /sp
   
-  -```GET``` /sp/<int:pk>
-  -```PUT``` /sp/<int:pk>
-  -```PATCH``` /sp/<int:pk>
-  -```DELETE``` /sp/<int:pk>
+ 
+ -```GET``` /sp/<int:pk>
   
-  -```GET``` /video/<int:pk>/rating
-  -```POST``` /video/<int:pk>/rating-create
+ -```PUT``` /sp/<int:pk>
+ 
+ -```PATCH``` /sp/<int:pk>
+ 
+ -```DELETE``` /sp/<int:pk>
   
-  -```GET``` /video/rating/<int:pk>
-  -```PUT``` /video/rating/<int:pk>
-  -```PATCH``` /video/rating/<int:pk>
-  -```DELETE``` /video/rating/<int:pk>
+ -```GET``` /video/<int:pk>/rating
   
-  -```GET``` /video/rating/<str:username>
+ -```POST``` /video/<int:pk>/rating-create
+  
+  
+ -```GET``` /video/rating/<int:pk>
+  
+ -```PUT``` /video/rating/<int:pk>
+  
+ -```PATCH``` /video/rating/<int:pk>
+  
+ -```DELETE``` /video/rating/<int:pk>
+  
+ -```GET``` /video/rating/<str:username>
   
   
