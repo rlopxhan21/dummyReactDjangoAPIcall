@@ -1,5 +1,5 @@
 # Django Rest Framework
-An web application to add reviews & rating for movies. This project is still under development. For now, it just includes api endpoints, in future, react will be used iin the future.
+An web application to add reviews & rating for movies. This project is still under development. For now, it just includes API endpoints, in future, react will be used iin the future.
 
 ## How to install:
 In terminal bash:
@@ -27,7 +27,9 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
 ## End Points Available:
 - For ```User```:
   -```POST``` /account/login
+  
   -```POST``` /account/register
+  
   -```POST``` /account/logout
  
  
