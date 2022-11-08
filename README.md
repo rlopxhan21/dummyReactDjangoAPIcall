@@ -26,6 +26,7 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
 
 ## End Points Available:
 - For ```User```:
+  
   -```POST``` /account/login
   
   -```POST``` /account/register
@@ -34,13 +35,18 @@ If there is any error in the code, send me a email at rlopxhan21@gmail.com
  
  
  - For ```rating```:
-  -```GET``` /video
-  -```POST``` /video
+ 
+ -```GET``` /video
+ 
+ -```POST``` /video
   
-  -```GET``` /video/<int:pk>
-  -```PUT``` /video/<int:pk>
-  -```PATCH``` /video/<int:pk>
-  -```DELETE``` /video/<int:pk>
+ -```GET``` /video/<int:pk>
+ 
+ -```PUT``` /video/<int:pk>
+ 
+ -```PATCH``` /video/<int:pk>
+ 
+ -```DELETE``` /video/<int:pk>
   
   -```GET``` /sp
   -```POST``` /sp
