@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'ratingapp', 
     'rest_framework.authtoken',
     'user_app',
-    'django_filters'
+    'django_filters',
+    'corsheaders'
     # 'django.contrib.auth.models'
 ]
 
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'movieproject.urls'
@@ -164,3 +166,8 @@ REST_FRAMEWORK = {
 # SIMPLE_JWT = {
 #     'ROTATE_REFRESH_TOKENS': True,
 # }data
+
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
